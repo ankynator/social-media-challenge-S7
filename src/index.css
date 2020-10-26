@@ -8,13 +8,66 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  padding: 3rem;
+}
+
+.Header {
+  border-bottom: solid 1px red;
+}
+
 .Cards {
-  /* border: dashed 2px violet; */
+  border: dashed 2px violet;
 }
 
 .card {
   border: solid 2px blue;
-  margin: 0 auto;
-  width: 32rem;
-  height: 28rem;
+  margin: 2rem auto;
+  width: 100%;
+  height: 22rem;
+}
+
+.Overview {
+  border: dashed 1px red;
+}
+
+.overviewCard {
+  border: solid 1px pink;
+  margin: 2rem auto;
+  width: 100%;
+  height: 11rem;
+}
+
+@media screen and (min-width: 1240px) {
+  body {
+    padding: 5rem 15rem;
+    padding-bottom: 0;
+  }
+
+  .Header {
+    border: none;
+  }
+
+  .Cards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card {
+    margin: 0;
+    width: 25rem;
+    height: 20rem;
+  }
+
+  .Overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .overviewCard {
+    margin: 0;
+    margin-bottom: 2rem;
+    width: 25rem;
+  }
 }
