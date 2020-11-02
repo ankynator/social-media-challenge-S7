@@ -53,34 +53,29 @@ body {
 }
 
 .Header {
-  /* border: solid 1px var(--text-color-dark); */
-
   background-color: var(--top-background);
-  /* width: 100%; */
   padding: 4rem 2rem 12rem 2rem;
   margin-bottom: -12rem;
   border-radius: 0 0 2rem 2rem;
 }
 
-.Header > h1 {
+.Header-title > h1 {
   color: var(--text-color-dark);
   margin-bottom: 0.5rem;
 }
 
-.Header > h3 {
+.Header-title > h3 {
   margin-bottom: 2rem;
   color: var(--text-color);
 }
 
 .Divisor {
-  margin: auto;
-  width: calc(100% - 4rem);
-  background: var(--text-color-dark);
+  height: 0.5px;
+  background: var(--text-color);
 }
 
 .DarkMode {
-  /* border: solid 1px green; */
-  padding: 2rem 2rem 0 2rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
 }
@@ -284,16 +279,30 @@ body {
 
   .Header {
     padding: 5rem 15rem 15rem 15rem;
-    margin-bottom: -15rem;
-    /* display: inline; */
+    margin-bottom: -12rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .Header-title > h1 {
+    margin: 0;
+  }
+
+  .Header-title > h3 {
+    margin: 0;
   }
 
   .DarkMode {
-    /* display: inline; */
-    padding: 0 15rem;
+    margin: 0;
+  }
+
+  .DarkMode > h3 {
+    margin-right: 2rem;
   }
 
   .Cards {
+    margin-bottom: 4rem;
     padding: 0 15rem;
     display: flex;
     justify-content: space-between;
@@ -305,7 +314,12 @@ body {
     height: 20rem;
   }
 
+  .card > .averageToday {
+    margin-top: 2rem;
+  }
+
   .Overview-title {
+    margin-bottom: 2rem;
     padding: 0 15rem;
   }
 
