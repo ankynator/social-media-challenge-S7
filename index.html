@@ -22,7 +22,7 @@
     <div class="DarkMode">
       <h3>Dark Mode</h3>
       <label class="DarkMode-button">
-        <input type="checkbox">
+        <input type="checkbox" onclick="toggleTheme()">
         <span class="check"></span>
       </label>
     </div>
@@ -204,5 +204,11 @@
         </div>
 
     </div>
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle("dark");
+      }
+    </script>
   </body>
 </html>

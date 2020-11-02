@@ -41,15 +41,25 @@ html {
 body {
   /* padding: 4rem 2rem; */
   font-size: 1.3rem;
+  background-color: var(--background);
+}
+
+.dark {
+  --background: hsl(230, 17%, 14%);
+  --top-background: hsl(232, 19%, 15%);
+  --card-background: hsl(228, 28%, 20%);
+  --text-color: hsl(228, 34%, 66%);
+  --text-color-dark: hsl(0, 0%, 100%);
 }
 
 .Header {
   /* border: solid 1px var(--text-color-dark); */
 
   background-color: var(--top-background);
+  /* width: 100%; */
   padding: 4rem 2rem 12rem 2rem;
   margin-bottom: -12rem;
-  border-radius: 2rem;
+  border-radius: 0 0 2rem 2rem;
 }
 
 .Header > h1 {
@@ -77,9 +87,6 @@ body {
 
 .DarkMode > h3 {
   color: var(--text-color);
-}
-
-.DarkMode-button {
 }
 
 .DarkMode-button > input[type="checkbox"] {
@@ -244,10 +251,18 @@ body {
   justify-content: space-between;
 }
 
+.header__overviewCard > h3 {
+  color: var(--text-color);
+}
+
 .content__overviewCard {
   /* border: solid 1px blue; */
   display: flex;
   justify-content: space-between;
+}
+
+.content__overviewCard > h1 {
+  color: var(--text-color-dark);
 }
 
 .overviewCard__average {
@@ -263,16 +278,23 @@ body {
 }
 
 @media screen and (min-width: 1240px) {
-  body {
-    padding: 5rem 15rem;
-    padding-bottom: 0;
+  .Divisor {
+    display: none;
   }
 
   .Header {
-    border: none;
+    padding: 5rem 15rem 15rem 15rem;
+    margin-bottom: -15rem;
+    /* display: inline; */
+  }
+
+  .DarkMode {
+    /* display: inline; */
+    padding: 0 15rem;
   }
 
   .Cards {
+    padding: 0 15rem;
     display: flex;
     justify-content: space-between;
   }
@@ -283,7 +305,12 @@ body {
     height: 20rem;
   }
 
+  .Overview-title {
+    padding: 0 15rem;
+  }
+
   .Overview {
+    padding: 0 15rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
