@@ -9,7 +9,9 @@
 :root {
   /* primary */
   --lime-green: hsl(163, 72%, 41%);
-  --Bright-red: hsl(356, 69%, 56%);
+  --bright-red: hsl(356, 69%, 56%);
+
+  /* brands */
   --facebook: hsl(208, 92%, 53%);
   --twitter: hsl(203, 89%, 53%);
   --instagram-one: hsl(37, 97%, 70%);
@@ -17,11 +19,18 @@
   --youTube: hsl(348, 97%, 39%);
 
   /* Light Theme */
-  --white: hsl(0, 0%, 100%);
-  --very-pale-blue: hsl(225, 100%, 98%);
-  --light-grayish-blue: hsl(227, 47%, 96%);
-  --dark-grayish-blue: hsl(228, 12%, 44%);
-  --very-dark-blue: hsl(230, 17%, 14%);
+  --background: hsl(0, 0%, 100%);
+  --top-background: hsl(225, 100%, 98%);
+  --card-background: hsl(227, 47%, 96%);
+  --text-color: hsl(228, 12%, 44%);
+  --text-color-dark: hsl(230, 17%, 14%);
+
+  /* toggle */
+
+  --toggle: hsl(230, 22%, 74%);
+  --toggle-dark: hsl(230, 17%, 14%);
+  --toggle-dark-one: hsl(210, 78%, 56%);
+  --toggle-dark-two: hsl(146, 68%, 55%);
 }
 
 html {
@@ -35,27 +44,28 @@ body {
 }
 
 .Header {
-  /* border: solid 1px var(--very-dark-blue); */
+  /* border: solid 1px var(--text-color-dark); */
 
-  background-color: var(--very-pale-blue);
+  background-color: var(--top-background);
   padding: 4rem 2rem 12rem 2rem;
   margin-bottom: -12rem;
   border-radius: 2rem;
 }
 
 .Header > h1 {
-  color: var(--very-dark-blue);
+  color: var(--text-color-dark);
   margin-bottom: 0.5rem;
 }
 
 .Header > h3 {
   margin-bottom: 2rem;
-  color: var(--dark-grayish-blue);
+  color: var(--text-color);
 }
 
 .Divisor {
   margin: auto;
   width: calc(100% - 4rem);
+  background: var(--text-color-dark);
 }
 
 .DarkMode {
@@ -66,7 +76,7 @@ body {
 }
 
 .DarkMode > h3 {
-  color: var(--dark-grayish-blue);
+  color: var(--text-color);
 }
 
 .DarkMode-button {
@@ -83,30 +93,34 @@ body {
   display: block;
   width: 4rem;
   height: 2rem;
-  background-color: #092c3e;
+  background-color: var(--toggle);
   cursor: pointer;
   border-radius: 2rem;
-  transition: ease-in 0.5s;
-}
-
-.DarkMode-button > input[type="checkbox"]:checked ~ .check {
-  background-color: #fff;
 }
 
 .check::before {
   content: "";
   position: absolute;
   top: 2px;
-  left: 2px;
-  background: red;
+  left: 2.2rem;
+  background: var(--card-background);
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 2rem;
   transition: 0.5s;
 }
 
+.DarkMode-button > input[type="checkbox"]:checked ~ .check {
+  background: linear-gradient(
+    90deg,
+    var(--toggle-dark-one) 30%,
+    var(--toggle-dark-two)
+  );
+}
+
 .DarkMode-button > input[type="checkbox"]:checked ~ .check::before {
-  transform: translateX(2rem);
+  transform: translateX(-2rem);
+  background: var(--toggle-dark);
 }
 
 .Cards {
@@ -120,7 +134,7 @@ body {
   width: 100%;
   height: 22rem;
   border-radius: 5px;
-  background-color: var(--light-grayish-blue);
+  background-color: var(--card-background);
   text-align: center;
   overflow: hidden;
 }
@@ -165,7 +179,7 @@ body {
 
 .card > .headerCard > h3 {
   font-size: 1.2rem;
-  color: var(--dark-grayish-blue);
+  color: var(--text-color);
 }
 
 .card > .followers {
@@ -176,11 +190,11 @@ body {
 
 .card > .followers > h1 {
   font-size: 5rem;
-  color: var(--very-dark-blue);
+  color: var(--text-color-dark);
 }
 
 .card > .followers > p {
-  color: var(--dark-grayish-blue);
+  color: var(--text-color);
   letter-spacing: 0.5rem;
   font-size: 1.3rem;
 }
@@ -202,7 +216,7 @@ body {
 }
 
 .Overview-title {
-  color: var(--dark-grayish-blue);
+  color: var(--text-color);
   padding: 2rem;
 }
 
@@ -217,7 +231,7 @@ body {
   padding: 2.5rem;
   width: 100%;
   height: 13rem;
-  background-color: var(--light-grayish-blue);
+  background-color: var(--card-background);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
